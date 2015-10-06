@@ -2,6 +2,7 @@
 # platform :ios, '9.0'
 
 def common
+  pod 'OpenSSL-Static', '1.0.2.c1'
 end
 
 target 'ConfidoIOS' do
@@ -10,6 +11,5 @@ end
 
 target 'ConfidoIOSTests' do
   common
-  pod 'OpenSSL-Static', '1.0.2.c1'
 end
 

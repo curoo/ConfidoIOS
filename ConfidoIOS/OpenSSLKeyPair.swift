@@ -1,13 +1,12 @@
 //
 //  DetachedKey.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 10/09/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
-import ConfidoIOS
 
 func += <KeyType, ValueType> (inout left: Dictionary<KeyType, ValueType>, right: Dictionary<KeyType, ValueType>) {
     for (k, v) in right {

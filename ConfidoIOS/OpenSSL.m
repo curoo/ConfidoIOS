@@ -7,7 +7,7 @@
 //
 
 
-#import <ConfidoIOSTests-Swift.h>
+#import <ConfidoIOS/ConfidoIOS-Swift.h>
 
 #import "OpenSSL.h"
 #import <openssl/x509.h>

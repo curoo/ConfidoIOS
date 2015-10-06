@@ -1,9 +1,9 @@
 //
 //  KeychainProtocol.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 11/09/2015.
-//  Copyright © 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation

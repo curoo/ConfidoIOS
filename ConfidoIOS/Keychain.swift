@@ -3,7 +3,7 @@
 //  ExpendSecurity
 //
 //  Created by Rudolph van Graan on 18/08/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
@@ -13,11 +13,6 @@ public typealias ItemReference     = AnyObject
 public typealias KeyChainPropertiesData = [ String : AnyObject]
 public typealias KeychainItemData  = [ String : AnyObject]
 
-func += <KeyType, ValueType> (inout left: Dictionary<KeyType, ValueType>, right: Dictionary<KeyType, ValueType>) {
-    for (k, v) in right {
-        left.updateValue(v, forKey: k)
-    }
-}
 public enum KeychainError : ErrorType, CustomStringConvertible {
     case
     NoSecIdentityReference,
