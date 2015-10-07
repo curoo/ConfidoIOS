@@ -1,6 +1,6 @@
 //
 //  TrustEvaluationPoint.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 15/09/2015.
 //

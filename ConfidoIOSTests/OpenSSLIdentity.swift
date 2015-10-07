@@ -1,6 +1,6 @@
 //
 //  OpenSSLIdentity.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 10/09/2015.
 //

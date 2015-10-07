@@ -1,9 +1,9 @@
 //
 //  KeychainProtocol.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 11/09/2015.
-//  Copyright © 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
@@ -142,7 +142,6 @@ public protocol KeychainCommonClassProperties : KeyChainAttributeStorage {
     kSecAttrTokenIDSecureEnclave, which indicates that item (private key) is
     backed by device's Secure Enclave.
     */
-    @available (iOS 9.0, *)
     var itemTokenID: String? { get }
 }
 
@@ -176,11 +175,7 @@ extension KeychainCommonClassProperties where Self : KeychainCommonClassProperti
 
     public var itemTokenID: String? {
         get {
-            if #available(iOS 9.0,*) {
-                return attributes[String(kSecAttrTokenID)] as? String
-            } else {
-                return nil
-            }
+            return attributes[String(kSecAttrTokenID)] as? String
         }
     }
 }

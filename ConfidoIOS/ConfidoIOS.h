@@ -1,9 +1,9 @@
 //
-//  IOSKeychain.h
-//  IOSKeychain
+// ConfidoIOS.h
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 09/09/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 #import <UIKit/UIKit.h>
