@@ -53,6 +53,9 @@
 		AB43E5371BB9B991002E9159 /* CommonRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = AB43E5321BB9B991002E9159 /* CommonRandom.h */; settings = {ASSET_TAGS = (); }; };
 		AB43E5381BB9B991002E9159 /* CommonSymmetricKeywrap.h in Headers */ = {isa = PBXBuildFile; fileRef = AB43E5331BB9B991002E9159 /* CommonSymmetricKeywrap.h */; settings = {ASSET_TAGS = (); }; };
 		AB710EB31BA060FB003AE8B0 /* ConfidoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB710EA71BA060FB003AE8B0 /* ConfidoIOS.framework */; };
+		ABBA33E21BC67CE6002B6FC7 /* public-key.der in Resources */ = {isa = PBXBuildFile; fileRef = ABBA33E11BC67CE6002B6FC7 /* public-key.der */; settings = {ASSET_TAGS = (); }; };
+		ABBA33E41BC6928B002B6FC7 /* OpenSSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA33E31BC6928B002B6FC7 /* OpenSSLTests.swift */; settings = {ASSET_TAGS = (); }; };
+		ABF300DA1BD92C4900A7BAFD /* development-build-public-key.der in Resources */ = {isa = PBXBuildFile; fileRef = ABF300D91BD92C4900A7BAFD /* development-build-public-key.der */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		AB43E5331BB9B991002E9159 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSymmetricKeywrap.h; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h; sourceTree = "<absolute>"; };
 		AB710EA71BA060FB003AE8B0 /* ConfidoIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConfidoIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB710EB21BA060FB003AE8B0 /* ConfidoIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfidoIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABBA33E11BC67CE6002B6FC7 /* public-key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "public-key.der"; sourceTree = "<group>"; };
+		ABBA33E31BC6928B002B6FC7 /* OpenSSLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSSLTests.swift; sourceTree = "<group>"; };
+		ABF300D91BD92C4900A7BAFD /* development-build-public-key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "development-build-public-key.der"; sourceTree = "<group>"; };
 		B6933143883CF50B5E488FCA /* libPods-ConfidoIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConfidoIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +197,7 @@
 		AB3D20F61BB0568000BB2899 /* ConfidoIOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABBA33E31BC6928B002B6FC7 /* OpenSSLTests.swift */,
 				AB3D21621BB309D000BB2899 /* OpenSSLKeyPair.swift */,
 				AB3D21601BB3097D00BB2899 /* OpenSSLIdentity.swift */,
 				AB3D20F71BB0568100BB2899 /* BaseTests.swift */,
@@ -213,6 +220,8 @@
 		AB3D20FD1BB0568100BB2899 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				ABF300D91BD92C4900A7BAFD /* development-build-public-key.der */,
+				ABBA33E11BC67CE6002B6FC7 /* public-key.der */,
 				AB3D21501BB2B9FB00BB2899 /* Custom Level 2 CA.cer */,
 				AB3D21511BB2B9FB00BB2899 /* Custom Level 3 CA.cer */,
 				AB3D21521BB2B9FB00BB2899 /* Custom Root CA.cer */,
@@ -384,6 +393,8 @@
 				AB3D21561BB2B9FB00BB2899 /* Custom Root CA.cer in Resources */,
 				AB3D211A1BB0568100BB2899 /* Symantec Class 3 EV SSL CA - G3.cer in Resources */,
 				AB3D21541BB2B9FB00BB2899 /* Custom Level 2 CA.cer in Resources */,
+				ABBA33E21BC67CE6002B6FC7 /* public-key.der in Resources */,
+				ABF300DA1BD92C4900A7BAFD /* development-build-public-key.der in Resources */,
 				AB3D211F1BB0568100BB2899 /* www.google.co.uk.cer in Resources */,
 				AB3D211D1BB0568100BB2899 /* test keypair 1.pem in Resources */,
 				AB3D21141BB0568100BB2899 /* Device Identity.p12 in Resources */,
@@ -460,6 +471,7 @@
 				AB3D21631BB309D000BB2899 /* OpenSSLKeyPair.swift in Sources */,
 				AB06D7E31BB7FF38007127C6 /* CryptoTests.swift in Sources */,
 				AB3D21101BB0568100BB2899 /* KeyPairTests.swift in Sources */,
+				ABBA33E41BC6928B002B6FC7 /* OpenSSLTests.swift in Sources */,
 				AB3D210E1BB0568100BB2899 /* IdentityTests.swift in Sources */,
 				AB3D215D1BB3066F00BB2899 /* OpenSSL.m in Sources */,
 				AB3D215E1BB3066F00BB2899 /* OpenSSLCertificate.swift in Sources */,
@@ -507,13 +519,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -599,12 +612,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = " ${SRCROOT}/CommonCrypto";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

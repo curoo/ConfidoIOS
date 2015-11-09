@@ -1,9 +1,9 @@
 //
 //  CertificateTests.swift
-//  IOSKeychain
+// ConfidoIOS
 //
 //  Created by Rudolph van Graan on 10/09/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
@@ -72,7 +72,28 @@ class CertificateTests: BaseTests {
     }
 
 
-    func testCertificateFromCERFile() {
+    func testCertificateFromCERFileWithLabel() {
+        do {
+            self.clearKeychainItems(.Certificate)
+            let certificateDERData = try contentsOfBundleResource(finalPinnedCACertificateName, ofType: "cer")
+            let transportCertificate = try KeychainCertificate.certificate(certificateDERData, itemLabel: "certificate")
+            XCTAssertEqual(transportCertificate.subject, finalPinnedCASubject)
+
+            let certificate = try transportCertificate.addToKeychain()
+            XCTAssertNotNil(certificate)
+
+            XCTAssertEqual(certificate!.subject, finalPinnedCASubject)
+            XCTAssertNotNil(certificate!.secCertificate)
+            XCTAssertEqual(self.keychainItems(.Certificate).count,1)
+
+            let storedCertificate = try KeychainCertificate.findInKeychain(CertificateDescriptor(certificateLabel: "certificate"))
+            XCTAssertNotNil(storedCertificate)
+        } catch let error  {
+            XCTFail("Unexpected Exception \(error)")
+        }
+    }
+
+    func testCertificateFromCERFileWithoutLabel() {
         do {
             self.clearKeychainItems(.Certificate)
             let certificateDERData = try contentsOfBundleResource(finalPinnedCACertificateName, ofType: "cer")
@@ -80,14 +101,19 @@ class CertificateTests: BaseTests {
             XCTAssertEqual(transportCertificate.subject, finalPinnedCASubject)
 
             let certificate = try transportCertificate.addToKeychain()
-            XCTAssertEqual(certificate.subject, finalPinnedCASubject)
-            XCTAssertNotNil(certificate.secCertificate)
-            XCTAssertEqual(self.keychainItems(.Certificate).count,1)
+            XCTAssertNil(certificate) // The certificate does not have label, so we can't get a reference this way
+            let items = self.keychainItems(.Certificate)
 
+            XCTAssertEqual(items.count,1)
+            let actualCertificate = items[0] as! KeychainCertificate
+
+            let storedCertificate = try KeychainCertificate.findInKeychain(CertificateDescriptor(certificateLabel: actualCertificate.subject))
+            XCTAssertNotNil(storedCertificate)
         } catch let error  {
             XCTFail("Unexpected Exception \(error)")
         }
     }
+
 
     func bundledCertificate(filename: String) throws -> TransportCertificate {
         let certificateDERData = try contentsOfBundleResource(filename, ofType: "cer")

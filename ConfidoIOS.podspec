@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ConfidoIOS"
-  s.version      = "1.1.0"
+  s.version      = "1.4.7"
   s.summary      = "A Library encapsulating IOS keychain access and certificates"
 
   s.description  = <<-DESC
@@ -57,6 +57,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
+  s.ios.deployment_target = "9.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -64,7 +65,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/curoo/ConfidoIOS.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/curoo/ConfidoIOS.git", :tag => "1.4.7" }
 
 
   s.source_files  = "ConfidoIOS/*.swift"

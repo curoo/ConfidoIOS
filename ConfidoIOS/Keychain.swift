@@ -3,7 +3,7 @@
 //  ExpendSecurity
 //
 //  Created by Rudolph van Graan on 18/08/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
@@ -120,12 +120,9 @@ public class SecurityWrapper {
         )
 
         if status == .OK {
-            print(persistedRef)
-            if let data = persistedRef as? NSData {
-                print(data)
-            }
+            return persistedRef
         }
-        return []
+        throw status
     }
 
     public class func secItemDelete(query: KeyChainPropertiesData) throws  {
@@ -174,7 +171,6 @@ public class Keychain {
         query[String(kSecReturnData)]       = returnData ? kCFBooleanTrue : kCFBooleanFalse
         query[String(kSecReturnRef)]        = returnRef ? kCFBooleanTrue : kCFBooleanFalse
         query[String(kSecMatchLimit)]       = returning == .One ? kSecMatchLimitOne : kSecMatchLimitAll
-        query[String(kSecReturnData)]       = kCFBooleanTrue
         query += attributes.keychainMatchPropertyValues()
 
         do {

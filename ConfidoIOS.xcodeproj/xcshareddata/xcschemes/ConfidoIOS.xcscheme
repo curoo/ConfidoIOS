@@ -56,9 +56,6 @@
                   Identifier = "IdentityTests/testCreateAndImportIdentity()">
                </Test>
                <Test
-                  Identifier = "IdentityTests/testImportPKCS12Identity()">
-               </Test>
-               <Test
                   Identifier = "KeyPairTests/testGenerateNamedECKeyPair()">
                </Test>
                <Test

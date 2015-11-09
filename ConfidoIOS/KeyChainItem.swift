@@ -3,7 +3,7 @@
 //  ExpendSecurity
 //
 //  Created by Rudolph van Graan on 18/08/2015.
-//  Copyright (c) 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
@@ -61,6 +61,7 @@ public class AbstractItem: KeychainItemClass, KeyChainAttributeStorage {
 public class KeychainItem: AbstractItem, KeychainCommonClassProperties {
     public class func itemFromAttributes(securityClass: SecurityClass, SecItemAttributes attributes: SecItemAttributes) throws -> KeychainItem {
         switch securityClass {
+        case .Identity: return try KeychainIdentity.identityFromAttributes(SecItemAttributes: attributes)
         case .Key: return try KeychainKey.keychainKeyFromAttributes(SecItemAttributes: attributes)
         case .Certificate : return try KeychainCertificate.keychainCertificateFromAttributes(SecItemAttributes: attributes)
         default: throw KeychainError.UnimplementedSecurityClass

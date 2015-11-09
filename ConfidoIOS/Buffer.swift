@@ -3,7 +3,7 @@
 //  ConfidoIOS
 //
 //  Created by Rudolph van Graan on 25/09/2015.
-//  Copyright © 2015 Curoo Limited. All rights reserved.
+//
 //
 
 import Foundation
