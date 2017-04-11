@@ -110,10 +110,14 @@ public let kKeyItemMatchingProperties :     Set<String> = [ String(kSecAttrLabel
 //    .KeySizeInBits, .EffectiveKeySize, .CanEncrypt, .CanDecrypt,
 //    .CanDerive, .CanSign, .CanVerify, .CanWrap, .CanUnwrap  ]
 
-public enum KeychainStatus : Error {
+public enum KeychainStatus : LocalizedError {
     case unimplementedError, paramError, allocateError, notAvailableError,
     authFailedError, duplicateItemError, itemNotFoundError, interactionNotAllowedError,
     decodeError, unknownError, ok
+
+    public var errorDescription: String? {
+        return KeychainStatus.messageForStatus(self)
+    }
 
     static func statusFromOSStatus(_ rawStatus: OSStatus) ->
         KeychainStatus {
